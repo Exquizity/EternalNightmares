@@ -1,0 +1,12 @@
+{
+  "voidambience": {
+    "sounds": ["eternalnightmares:voidambience"]
+  },
+  "swedenreversed": {
+    "sounds": ["eternalnightmares:swedenreversed"]
+  },
+  "heartbeat": {
+    "subtitle": "subtitles.heartbeat",
+    "sounds": ["eternalnightmares:heartbeat"]
+  }
+}

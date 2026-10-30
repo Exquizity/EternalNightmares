@@ -1,0 +1,17 @@
+{
+  "feature": "eternalnightmares:darkness_layers",
+  "placement": [
+    {
+      "type": "minecraft:count", "count": 64
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap", "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}
