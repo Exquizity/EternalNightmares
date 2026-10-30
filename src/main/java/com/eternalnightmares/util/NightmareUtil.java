@@ -42,10 +42,14 @@ public class NightmareUtil {
 
             }
             // effects
-            player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 20 * 5, 1, false, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 1, false, false, false));
             player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 100, 2, false, false, false));
             player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 50, 2, false, false, false));
             food.setFoodLevel(Math.max(0, food.getFoodLevel() - 9)); // removes 4.5 bars of hunger
+        } else if (type == 2) { // win
+            food.setFoodLevel(Math.max(0, food.getFoodLevel() + 6));
+            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 1, 1, false, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1, false, false, false));
         }
     }
 
