@@ -48,12 +48,12 @@ public class NightmareUtil {
             food.setFoodLevel(Math.max(0, food.getFoodLevel() - 9)); // removes 4.5 bars of hunger
         } else if (type == 2) { // win
             food.setFoodLevel(Math.max(0, food.getFoodLevel() + 6));
-            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 1, 1, false, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 2, 1, false, false, false));
             player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1, false, false, false));
         }
     }
 
-    public static void EndNightmareForPlayer(ServerPlayer player, Nightmare selected, int type) {
+    public static void EndNightmareForPlayer(ServerPlayer player, int type) {
         // type is how the nightmare ends, 0 is lost, 1 is neutral, 2 is won
         BlockPos pos = player.getRespawnPosition();
         if (pos == null) {
@@ -80,7 +80,7 @@ public class NightmareUtil {
             }
         }
 
-        EndNightmareForPlayer(player, selected, type);
+        EndNightmareForPlayer(player, type);
     };
 
     public static void StartNightmareForPlayer(ServerPlayer player) {
