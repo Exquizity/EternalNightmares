@@ -16,7 +16,7 @@ public class MultiplayerInstabilityNotice {
         }
 
         int count = player.server.getPlayerList().getPlayerCount();
-        if (count >= 1) {
+        if (count >= 2) {
             for (ServerPlayer p : player.server.getPlayerList().getPlayers()) {
                 p.displayClientMessage(Component.literal("The mod Eternal Nightmares has not been properly tested or yet developed for multiplayer. You may encounter bugs and glitches. You can make bug reports in the official Github page for the mod (https://github.com/Exquizity/EternalNightmares)"), false);
             }

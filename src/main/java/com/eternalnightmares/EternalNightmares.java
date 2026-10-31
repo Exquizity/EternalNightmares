@@ -1,7 +1,10 @@
 package com.eternalnightmares;
 
+import com.eternalnightmares.entity.Watcher.WatcherEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -68,6 +71,12 @@ public class EternalNightmares {
     public static final DeferredRegister<SoundEvent> SOUNDS =
             DeferredRegister.create(Registries.SOUND_EVENT, MODID);
 
+    public static final DeferredRegister<EntityType<?>> ENTITIES =
+            DeferredRegister.create(Registries.ENTITY_TYPE, MODID);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<WatcherEntity>> WATCHER = ENTITIES.register(
+            "watcher", () -> EntityType.Builder.of(WatcherEntity::new, MobCategory.MONSTER).sized(0.6f, 1.95f).build("watcher"));
+
 
     private static DeferredHolder<SoundEvent, SoundEvent> sound(String name) {
         return SOUNDS.register(name, () -> SoundEvent.createVariableRangeEvent(
@@ -91,6 +100,8 @@ public class EternalNightmares {
         CREATIVE_MODE_TABS.register(modEventBus);
 
         SOUNDS.register(modEventBus);
+
+        ENTITIES.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
