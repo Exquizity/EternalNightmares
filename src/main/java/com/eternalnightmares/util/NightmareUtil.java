@@ -108,6 +108,7 @@ public class NightmareUtil {
             Scheduler.schedule(selected.data().duration() * 20, () -> { // schedule NightmareTimeoutForPlayer after nightmare data duration * 20 (ticks)
                 NightmareTimeoutForPlayer(player, selected);
             });
+
         });
 
     }

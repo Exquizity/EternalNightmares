@@ -1,5 +1,6 @@
-package com.eternalnightmares;
+package com.eternalnightmares.entity;
 
+import com.eternalnightmares.EternalNightmares;
 import com.eternalnightmares.entity.Watcher.WatcherEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacementTypes;
@@ -10,7 +11,7 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 @EventBusSubscriber(modid = EternalNightmares.MODID)
-public class ModEntityEvents {
+public class EntityData {
 
     @SubscribeEvent
     public static void onAttributes(EntityAttributeCreationEvent event) {

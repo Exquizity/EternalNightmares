@@ -40,11 +40,4 @@ public final class Scheduler
         due.forEach(task -> task.action().run());
     }
 
-    // forget everything when the world is closed
-    @SubscribeEvent
-    public static void onServerStopped(ServerStoppedEvent event)
-    {
-        TASKS.clear();
-        now = 0;
-    }
 }
