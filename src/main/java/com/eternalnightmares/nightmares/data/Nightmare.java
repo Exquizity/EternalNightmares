@@ -1,4 +1,4 @@
-package com.eternalnightmares.nightmarescripts;
+package com.eternalnightmares.nightmares.data;
 
 import net.minecraft.server.level.ServerPlayer;
 

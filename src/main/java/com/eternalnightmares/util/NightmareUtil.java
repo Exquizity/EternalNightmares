@@ -1,8 +1,8 @@
 package com.eternalnightmares.util;
 
 import com.eternalnightmares.EternalNightmares;
-import com.eternalnightmares.nightmarescripts.FamiliarDimensionScript;
-import com.eternalnightmares.nightmarescripts.VoidDimensionScript;
+import com.eternalnightmares.nightmares.FamiliarDimensionScript;
+import com.eternalnightmares.nightmares.VoidDimensionScript;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -15,7 +15,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodData;
 import org.slf4j.Logger;
-import com.eternalnightmares.nightmarescripts.Nightmare;
+import com.eternalnightmares.nightmares.data.Nightmare;
 
 import java.util.List;
 import net.minecraft.world.level.Level;
@@ -32,15 +32,8 @@ public class NightmareUtil {
     public static void NightmareResultActionForPlayer(ServerPlayer player, int type) {
         FoodData food = player.getFoodData();
         if (type == 0) { // fail
-            //this down here plays the heartbeat
-            int val = 20;
-            while (!(val == 180)) {
-                Scheduler.schedule(val, () -> {
-                    player.playNotifySound(EternalNightmares.heartbeat.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
-                });
-                val = val + 20;
-
-            }
+            // heartbeat sfx
+            player.playNotifySound(EternalNightmares.heartbeat.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
             // effects
             player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 1, false, false, false));
             player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 100, 2, false, false, false));

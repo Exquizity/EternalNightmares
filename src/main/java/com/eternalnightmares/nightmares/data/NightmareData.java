@@ -1,4 +1,4 @@
-package com.eternalnightmares.nightmarescripts;
+package com.eternalnightmares.nightmares.data;
 
 public record NightmareData(String target,
                             int duration,

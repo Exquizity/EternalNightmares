@@ -1,12 +1,18 @@
 package com.eternalnightmares.entity.Watcher;
 
+import com.eternalnightmares.EternalNightmares;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 public class WatcherEntity extends Monster {
     public WatcherEntity(EntityType<? extends Monster> type, Level level) {
@@ -47,5 +53,22 @@ public class WatcherEntity extends Monster {
             setYHeadRot(yaw);
             setYBodyRot(yaw);
         }
+
+    }
+
+
+
+    @SubscribeEvent
+    public static void onAttributes(EntityAttributeCreationEvent event) {
+        event.put(EternalNightmares.WATCHER.get(), createAttributes().build());
+    }
+
+    @SubscribeEvent
+    public static void onSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+        event.register(EternalNightmares.WATCHER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Mob::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
     }
 }

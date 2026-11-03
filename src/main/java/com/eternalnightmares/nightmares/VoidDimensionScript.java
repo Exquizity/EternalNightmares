@@ -1,6 +1,8 @@
-package com.eternalnightmares.nightmarescripts;
+package com.eternalnightmares.nightmares;
 
 import com.eternalnightmares.EternalNightmares;
+import com.eternalnightmares.nightmares.data.Nightmare;
+import com.eternalnightmares.nightmares.data.NightmareData;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 

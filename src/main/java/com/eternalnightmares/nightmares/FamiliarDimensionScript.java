@@ -1,6 +1,8 @@
-package com.eternalnightmares.nightmarescripts;
+package com.eternalnightmares.nightmares;
 
 import com.eternalnightmares.EternalNightmares;
+import com.eternalnightmares.nightmares.data.Nightmare;
+import com.eternalnightmares.nightmares.data.NightmareData;
 import com.eternalnightmares.util.NightmareUtil;
 import com.eternalnightmares.util.Scheduler;
 import net.minecraft.core.BlockPos;
