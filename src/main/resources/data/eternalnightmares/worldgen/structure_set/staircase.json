@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "eternalnightmares:staircase",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 893471927,
+    "spacing": 6,
+    "separation": 4,
+    "spread_type": "linear"
+  }
+}

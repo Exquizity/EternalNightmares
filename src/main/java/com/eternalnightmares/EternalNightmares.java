@@ -1,5 +1,6 @@
 package com.eternalnightmares;
 
+import com.eternalnightmares.block.triggers.staircasetrigger.StaircaseTrigger;
 import com.eternalnightmares.entity.Watcher.WatcherEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -54,6 +55,7 @@ public class EternalNightmares {
     // Creates a new BlockItem with the id "eternalnightmares:example_block", combining the namespace and path
     public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
     public static final DeferredBlock<Block> darkness_block = BLOCKS.registerSimpleBlock("darkness", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(-1.0f, 3600000.0f));
+    public static final DeferredBlock<Block> staircasetrigger = BLOCKS.register("staircasetrigger", () -> new StaircaseTrigger(BlockBehaviour.Properties.of().noCollission().noOcclusion().strength(-1.0f, 3600000.0f).noLootTable()));
 
     // Creates a new food item with the id "eternalnightmares:example_id", nutrition 1 and saturation 2
     public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()

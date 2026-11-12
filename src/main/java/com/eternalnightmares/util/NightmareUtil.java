@@ -2,6 +2,7 @@ package com.eternalnightmares.util;
 
 import com.eternalnightmares.EternalNightmares;
 import com.eternalnightmares.nightmares.FamiliarDimensionScript;
+import com.eternalnightmares.nightmares.StaircaseDimensionScript;
 import com.eternalnightmares.nightmares.VoidDimensionScript;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
@@ -24,8 +25,7 @@ public class NightmareUtil {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     private static final List<Nightmare> NIGHTMARES = List.of( // note to self, i need to add to the list WHEN I ADD A NEW NIGHTMARE
-            new VoidDimensionScript(),
-            new FamiliarDimensionScript()
+            new StaircaseDimensionScript()
 
     );
 
