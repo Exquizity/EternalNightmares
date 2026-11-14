@@ -11,9 +11,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
+@EventBusSubscriber(modid = EternalNightmares.MODID)
 public class WatcherEntity extends Monster {
     public WatcherEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);

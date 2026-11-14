@@ -24,7 +24,5 @@ public class VoidDimensionScript implements Nightmare {
     @Override
     public void Main(ServerPlayer player) {
         player.playNotifySound(EternalNightmares.void_ambience.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
-        player.getAbilities().invulnerable = true;
-        player.onUpdateAbilities();
     }
 }

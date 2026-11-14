@@ -35,8 +35,6 @@ public class FamiliarDimensionScript implements Nightmare {
     public void Main(ServerPlayer player) {
         player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 20 * 5, 1, false, false, false));
         player.playNotifySound(EternalNightmares.sweden_reversed.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
-        player.getAbilities().invulnerable = true;
-        player.onUpdateAbilities();
 
         Level level = player.level();
         RandomSource random = player.getRandom();

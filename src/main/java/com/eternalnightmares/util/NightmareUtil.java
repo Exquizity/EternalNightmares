@@ -24,7 +24,7 @@ import net.minecraft.world.level.Level;
 public class NightmareUtil {
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    private static final List<Nightmare> NIGHTMARES = List.of( // note to self, i need to add to the list WHEN I ADD A NEW NIGHTMARE
+    private static final List<Nightmare> NIGHTMARES = List.of( // note to self, I need to add to the list WHEN I ADD A NEW NIGHTMARE
             new StaircaseDimensionScript()
 
     );
@@ -57,12 +57,12 @@ public class NightmareUtil {
         player.getAbilities().invulnerable = false;
         player.onUpdateAbilities();
         NightmareResultActionForPlayer(player, type);
-    };
+    }
 
     public static void NightmareTimeoutForPlayer(ServerPlayer player, Nightmare selected) {
         if (!player.level().dimension().location().toString().equals(selected.data().target())) { // (if players current dimension != the nightmare data's target)
             return;
-        };
+        }
 
         int type = 0; // default is loss
         if (selected.data().neutral()) { // is nightmare neutral
@@ -74,7 +74,7 @@ public class NightmareUtil {
         }
 
         EndNightmareForPlayer(player, type);
-    };
+    }
 
     public static void StartNightmareForPlayer(ServerPlayer player) {
         if (NIGHTMARES.isEmpty()) { // this should never happen anyway
@@ -82,7 +82,6 @@ public class NightmareUtil {
         }
 
         Nightmare selected = NIGHTMARES.get(player.getRandom().nextInt(NIGHTMARES.size()));
-        LOGGER.info("Selected Nightmare: ", selected.getClass().getSimpleName());
 
         // take the player to the dimension after 1 tick after waking up
         Scheduler.schedule(1, () -> {
@@ -97,6 +96,8 @@ public class NightmareUtil {
             player.teleportTo(dimension, player.getX(), selected.data().spawnY(), player.getZ(), player.getYRot(), player.getXRot());
 
             selected.Main(player); // starts the nightmares main func
+            player.getAbilities().invulnerable = true;
+            player.onUpdateAbilities();
 
             Scheduler.schedule(selected.data().duration() * 20, () -> { // schedule NightmareTimeoutForPlayer after nightmare data duration * 20 (ticks)
                 NightmareTimeoutForPlayer(player, selected);

@@ -7,6 +7,7 @@ import com.eternalnightmares.util.Scheduler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 
 import java.util.Optional;
 
@@ -28,6 +29,7 @@ public class StaircaseDimensionScript implements Nightmare {
     public void Main(ServerPlayer player) {
         Scheduler.schedule(5, () -> {
             ServerLevel level = player.serverLevel();
+            EternalNightmares.LOGGER.info("staircase nightmare: playing ambience");
 
             Optional<BlockPos> target = BlockPos.findClosestMatch(
                     player.blockPosition(),
@@ -41,7 +43,10 @@ public class StaircaseDimensionScript implements Nightmare {
             }
 
             BlockPos pos = target.get();
-            player.teleportTo(level, pos.getX(), pos.getY() + 1.0, pos.getZ(), player.getYRot(), player.getXRot());
+            player.teleportTo(level, pos.getX(), pos.getY() - 13, pos.getZ(), player.getYRot(), player.getXRot());
+            Scheduler.schedule(20, () -> {
+                player.playNotifySound(EternalNightmares.staircase_ambience.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
+            });
         });
     }
 }

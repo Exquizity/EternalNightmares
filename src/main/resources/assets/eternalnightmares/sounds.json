@@ -2,11 +2,17 @@
   "voidambience": {
     "sounds": ["eternalnightmares:voidambience"]
   },
+  "staircaseambience": {
+    "sounds": ["eternalnightmares:staircaseambience"]
+  },
   "swedenreversed": {
     "sounds": ["eternalnightmares:swedenreversed"]
   },
   "heartbeat": {
     "subtitle": "subtitles.heartbeat",
     "sounds": ["eternalnightmares:heartbeat"]
+  },
+  "warp": {
+    "sounds": ["eternalnightmares:warp"]
   }
 }

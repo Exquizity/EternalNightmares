@@ -85,8 +85,10 @@ public class EternalNightmares {
                 ResourceLocation.fromNamespaceAndPath(MODID, name)));
     }
     public static final DeferredHolder<SoundEvent, SoundEvent> void_ambience = sound("voidambience");
+    public static final DeferredHolder<SoundEvent, SoundEvent> staircase_ambience = sound("staircaseambience");
     public static final DeferredHolder<SoundEvent, SoundEvent> sweden_reversed = sound("swedenreversed");
     public static final DeferredHolder<SoundEvent, SoundEvent> heartbeat = sound("heartbeat");
+    public static final DeferredHolder<SoundEvent, SoundEvent> warp = sound("warp");
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.

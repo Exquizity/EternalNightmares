@@ -1,5 +1,7 @@
 package com.eternalnightmares.block.triggers.staircasetrigger;
 
+import com.eternalnightmares.EternalNightmares;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.RelativeMovement;
 import net.minecraft.world.level.block.Block;
 import com.mojang.serialization.MapCodec;
@@ -38,6 +40,7 @@ public class StaircaseTrigger extends Block {
 
         if (entity instanceof ServerPlayer player) {
             player.teleportTo(player.serverLevel(), player.getX(), player.getY() - 13, player.getZ(), player.getYRot(), player.getXRot());
+            player.playNotifySound(EternalNightmares.warp.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
         }
     }
 
