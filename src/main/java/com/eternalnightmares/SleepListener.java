@@ -25,11 +25,11 @@ public class SleepListener {
             return;
         }
 
-        if (player.getRandom().nextInt(100) < Config.NIGHTMARE_CHANCE.get()) { // If NightmareChance is higher than a random int from 1-100 then start nightmare
-            LOGGER.info("Chance for nightmare failed");
-        } else {
-            LOGGER.info("Starting nightmare");
+        if (player.getRandom().nextInt(100) < Config.NIGHTMARE_CHANCE.get()) { // roll below chance % -> nightmare starts
+            LOGGER.info("Nightmare chance roll succeeded");
             NightmareUtil.StartNightmareForPlayer(player);
+        } else {
+            LOGGER.info("Nightmare chance roll failed");
         }
     }
 }
