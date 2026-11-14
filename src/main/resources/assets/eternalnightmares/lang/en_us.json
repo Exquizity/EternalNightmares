@@ -1,4 +1,6 @@
 {
   "block.eternalnightmares.darkness": "Darkness",
-  "subtitles.heartbeat": "Heartbeat"
+  "subtitles.heartbeat": "Heartbeat",
+  "eternalnightmares.configuration.nightmaresEnabled": "Nightmares Enabled",
+  "eternalnightmares.configuration.nightmareChance": "Nightmare Chance"
 }

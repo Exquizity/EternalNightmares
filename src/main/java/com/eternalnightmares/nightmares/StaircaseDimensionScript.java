@@ -29,7 +29,6 @@ public class StaircaseDimensionScript implements Nightmare {
     public void Main(ServerPlayer player) {
         Scheduler.schedule(5, () -> {
             ServerLevel level = player.serverLevel();
-            EternalNightmares.LOGGER.info("staircase nightmare: playing ambience");
 
             Optional<BlockPos> target = BlockPos.findClosestMatch(
                     player.blockPosition(),
