@@ -1,6 +1,7 @@
 package com.eternalnightmares;
 
 import com.eternalnightmares.block.triggers.staircasetrigger.StaircaseTrigger;
+import com.eternalnightmares.entity.BlueWisp.BlueWispEntity;
 import com.eternalnightmares.entity.Watcher.WatcherEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -76,6 +77,9 @@ public class EternalNightmares {
 
     public static final DeferredHolder<EntityType<?>, EntityType<WatcherEntity>> WATCHER = ENTITIES.register(
             "watcher", () -> EntityType.Builder.of(WatcherEntity::new, MobCategory.MONSTER).sized(0.6f, 1.95f).build("watcher"));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<BlueWispEntity>> BLUE_WISP = ENTITIES.register(
+            "bluewisp", () -> EntityType.Builder.of(BlueWispEntity::new, MobCategory.MONSTER).sized(0.6f, 0.6f).build("bluewisp"));
 
 
     private static DeferredHolder<SoundEvent, SoundEvent> sound(String name) {

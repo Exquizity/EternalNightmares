@@ -1,5 +1,6 @@
 package com.eternalnightmares;
 
+import com.eternalnightmares.entity.BlueWisp.BlueWispRender;
 import com.eternalnightmares.entity.Watcher.WatcherEntity;
 import com.eternalnightmares.entity.Watcher.WatcherRender;
 import net.minecraft.client.Minecraft;
@@ -44,6 +45,7 @@ public class EternalNightmaresClient {
     @SubscribeEvent
     public static void onRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EternalNightmares.WATCHER.get(), WatcherRender::new);
+        event.registerEntityRenderer(EternalNightmares.BLUE_WISP.get(), BlueWispRender::new);
     }
 
     @SubscribeEvent

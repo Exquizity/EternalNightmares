@@ -1,0 +1,11 @@
+{
+  "type": "eternalnightmares:wisp_forest",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "eternalnightmares:wisp_forest"
+    }
+  }
+}

@@ -1,9 +1,11 @@
 package com.eternalnightmares.entity;
 
 import com.eternalnightmares.EternalNightmares;
+import com.eternalnightmares.entity.BlueWisp.BlueWispEntity;
 import com.eternalnightmares.entity.Watcher.WatcherEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -16,6 +18,7 @@ public class EntityData {
     @SubscribeEvent
     public static void onAttributes(EntityAttributeCreationEvent event) {
         event.put(EternalNightmares.WATCHER.get(), WatcherEntity.createAttributes().build());
+        event.put(EternalNightmares.BLUE_WISP.get(), BlueWispEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -24,6 +27,12 @@ public class EntityData {
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Mob::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+
+        event.register(EternalNightmares.BLUE_WISP.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
     }
 
