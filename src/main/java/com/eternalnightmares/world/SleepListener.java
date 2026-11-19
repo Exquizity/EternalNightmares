@@ -1,5 +1,7 @@
-package com.eternalnightmares;
+package com.eternalnightmares.world;
 
+import com.eternalnightmares.Config;
+import com.eternalnightmares.EternalNightmares;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;

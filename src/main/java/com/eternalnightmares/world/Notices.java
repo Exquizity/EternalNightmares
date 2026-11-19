@@ -1,5 +1,6 @@
-package com.eternalnightmares;
+package com.eternalnightmares.world;
 
+import com.eternalnightmares.EternalNightmares;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -7,7 +8,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
 @EventBusSubscriber(modid = EternalNightmares.MODID)
-public class MultiplayerInstabilityNotice {
+public class Notices {
 
     @SubscribeEvent
     public static void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {

@@ -1,10 +1,8 @@
 package com.eternalnightmares.util;
 
 import com.eternalnightmares.EternalNightmares;
-import com.eternalnightmares.nightmares.FamiliarDimensionScript;
 import com.eternalnightmares.nightmares.ForestDimensionScript;
 import com.eternalnightmares.nightmares.StaircaseDimensionScript;
-import com.eternalnightmares.nightmares.VoidDimensionScript;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

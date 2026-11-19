@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
 public class WatcherRender extends HumanoidMobRenderer<WatcherEntity, HumanoidModel<WatcherEntity>> {
-    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(EternalNightmares.MODID, "textures/entity/watcher.png");
+    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(EternalNightmares.MODID, "textures/entity/watcher/watcher.png");
 
     public WatcherRender(EntityRendererProvider.Context context) {
         super(context, new HumanoidModel<>(context.bakeLayer(ModelLayers.ZOMBIE)), 0.5f);
