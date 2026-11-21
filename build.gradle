@@ -56,7 +56,7 @@ neoForge {
             client()
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-            // Auto-load into this world at launch (Minecraft Quick Play). Remove or comment out to get the normal title screen.
+            // Auto-load into this server at launch (Minecraft Quick Play). Remove or comment out to get the normal title screen.
             programArgument '--quickPlaySingleplayer'
             programArgument 'coolerworld'
         }

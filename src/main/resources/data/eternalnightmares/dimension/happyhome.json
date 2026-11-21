@@ -1,0 +1,15 @@
+{
+  "type": "eternalnightmares:happyhome",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "eternalnightmares:void",
+      "features": false,
+      "lakes": false,
+      "layers": [
+        { "block": "eternalnightmares:darkness", "height": 1 }
+      ],
+      "structure_overrides": ["eternalnightmares:home_1"]
+    }
+  }
+}

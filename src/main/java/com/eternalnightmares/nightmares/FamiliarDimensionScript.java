@@ -3,7 +3,7 @@ package com.eternalnightmares.nightmares;
 import com.eternalnightmares.EternalNightmares;
 import com.eternalnightmares.nightmares.data.Nightmare;
 import com.eternalnightmares.nightmares.data.NightmareData;
-import com.eternalnightmares.util.NightmareUtil;
+import com.eternalnightmares.util.NightmareCore;
 import com.eternalnightmares.util.Scheduler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -57,7 +57,7 @@ public class FamiliarDimensionScript implements Nightmare {
                                 serverLevel.broadcastEntityEvent(player, (byte) 2); // fake the player taking damage
                             }
                             Scheduler.schedule(2, () -> {
-                                NightmareUtil.EndNightmareForPlayer(player, 0);
+                                NightmareCore.EndNightmareForPlayer(player, 0);
                             });
                         }
                     } else {

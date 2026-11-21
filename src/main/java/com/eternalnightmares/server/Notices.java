@@ -1,4 +1,4 @@
-package com.eternalnightmares.world;
+package com.eternalnightmares.server;
 
 import com.eternalnightmares.EternalNightmares;
 import net.minecraft.network.chat.Component;

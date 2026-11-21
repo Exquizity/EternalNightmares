@@ -1,7 +1,6 @@
 package com.eternalnightmares.util;
 
 import com.eternalnightmares.EternalNightmares;
-import com.eternalnightmares.nightmares.ForestDimensionScript;
 import com.eternalnightmares.nightmares.StaircaseDimensionScript;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
@@ -20,12 +19,12 @@ import com.eternalnightmares.nightmares.data.Nightmare;
 import java.util.List;
 import net.minecraft.world.level.Level;
 
-public class NightmareUtil {
+public class NightmareCore {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     private static final List<Nightmare> NIGHTMARES = List.of( // note to self, I need to add to the list WHEN I ADD A NEW NIGHTMARE
-            new StaircaseDimensionScript(),
-            new ForestDimensionScript()
+            new StaircaseDimensionScript()
+
 
     );
 
